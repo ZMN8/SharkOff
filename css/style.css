@@ -1,0 +1,279 @@
+@charset "utf-8";
+/* CSS Document */
+body, div, p, h1, h2, h3, h4, ul, li, dl, dt, dd, ol, form, table, tr, td, span, label, input, select, option, a, img, i, em, strong, b {
+    margin: 0;
+    padding: 0;
+}
+
+li {
+    list-style: none;
+}
+
+img {
+    border: 0 none;
+    vertical-align: top;
+}
+
+a {
+    text-decoration: none;
+    color: #333333;
+    display: block;
+}
+
+html {
+    /*rem单位永远以html做参考缩放；百分比和em以父元素做参考*/
+    font-size: 625%; /*16*6.25=100px*/
+    height:100%;
+}
+
+body {
+    font-family: "微软雅黑";
+    color: #000000;
+    max-width: 750px; /*效果图的宽度*/
+    min-width: 320px;
+    margin: 0 auto;
+    font-size: 0.26rem; /*body中默认使用做多的字体大小*/
+    height:100vh;
+}
+
+.clearfix {*zoom: 1;}
+
+.clearfix:after {
+    content: ".";
+    display: block;
+    height: 0;
+    clear: both;
+    visibility: hidden;
+}
+
+/*main_demo*/
+.main{position:relative;background:#ffe63b url("../images/header_bg.jpg") no-repeat top center;background-size:7.5rem 3.76rem;height:7.25rem;padding:4.73rem 0 0.08rem 0;}
+.machine{position:absolute;z-index:0;top:4.73rem;left:50%;width:5.04rem;height:4.53rem;margin-left:-2.52rem;background-color:#ffe63b;}
+.allBall{position:absolute;top:0;left:0;width:5.04rem;height:5.01rem;}
+
+.allBall .glass{position:absolute;z-index:1;top:0;left:0;width:5.04rem;height:5.01rem;background: url("../images/glassball.png") no-repeat top left;background-size:5.04rem 5.01rem; }
+.allBall i{position:absolute;z-index:3;width:0.96rem;height:0.96rem;background: url("../images/redball.png") no-repeat top left;background-size: 0.96rem 0.96rem;}
+.ball_1{bottom:1.55rem;right:0.33rem;}
+.ball_2{bottom:0.84rem;right:0.6rem;}
+.ball_3{bottom:0.34rem;right:1.21rem;}
+.ball_4{bottom:0.95rem;right:1.35rem;}
+.ball_5{bottom:0.22rem;right:2.05rem;}
+.ball_6{bottom:0.32rem;left:1.33rem;}
+.ball_7{bottom:0.84rem;left:0.67rem;}
+.ball_8{bottom:0.9rem;left:1.56rem;}
+.allBall .ball_9{background: url("../images/blueball.png") no-repeat top left;background-size: 0.96rem 0.96rem;bottom:1.36rem;left:1.33rem;}
+
+.base{position:absolute;z-index: -1;top:4.53rem;left:0;width:5.04rem;height:2.72rem;background: url("../images/base.png") no-repeat top left;background-size:5.04rem 2.72rem; }
+.button{position: absolute;bottom:0.44rem;right:1.04rem;width:1.58rem;height:1.58rem;background: url("../images/button.png") no-repeat;background-size: 1.58rem 1.58rem;}
+.relbutton{position: absolute;bottom:0.44rem;right:1.04rem;width:1.58rem;height:1.58rem;opacity: 0;z-index: 2;}
+
+.exit{position: absolute;top:5.53rem;left:1.19rem;width:1.14rem;height:1.46rem;background: url("../images/exit_1.png") no-repeat left bottom;background-size: 1.14rem 1.46rem;}
+
+.exit_top{position: absolute;top:0;left:0;width:1.14rem;height:1rem;background: url("../images/exit_1.png") no-repeat left top;background-size: 1.14rem 1.46rem;z-index: 1;}
+.exit_ball_1,.exit_ball_2,.exit_ball_3,.exit_ball_4,.exit_ball_5,.exit_ball_6,.exit_ball_7{position: absolute;top:0;left:50%;width:0.96rem;height:0.96rem;background: url("../images/exitBall.png") no-repeat left top;background-size: 0.96rem 0.96rem;margin-left: -0.48rem;z-index: 0;}
+.exit_ball_7{background: url("../images/exitblueball.png") no-repeat left top;background-size: 0.96rem 0.96rem;}
+@keyframes glassrotate{
+    0%{
+        -webkit-transform: rotate(0deg);
+        -moz-transform: rotate(0deg);
+        -ms-transform: rotate(0deg);
+        -o-transform: rotate(0deg);
+        transform: rotate(0deg);}
+    100%{
+        -webkit-transform: rotate(360deg);
+        -moz-transform: rotate(360deg);
+        -ms-transform: rotate(360deg);
+        -o-transform: rotate(360deg);
+        transform: rotate(360deg);
+    }
+}
+.add{
+     animation: glassrotate 0.5s;
+    -webkit-animation: glassrotate 0.5s;
+    -moz-animation: glassrotate 0.5s;
+    -ms-animation: glassrotate 0.5s;
+    -o-animation: glassrotate 0.5s;
+    animation-iteration-count:infinite;
+ }
+
+@keyframes ballrotate{
+    0%{
+        -webkit-transform: rotate(0deg);
+        -moz-transform: rotate(0deg);
+        -ms-transform: rotate(0deg);
+        -o-transform: rotate(0deg);
+        transform: rotate(0deg);
+    }
+    25%{
+        -webkit-transform: rotate(60deg);
+        -moz-transform: rotate(60deg);
+        -ms-transform: rotate(60deg);
+        -o-transform: rotate(60deg);
+        transform: rotate(60deg);
+
+    }
+    50%{
+        -webkit-transform: rotate(-30deg);
+        -moz-transform: rotate(-30deg);
+        -ms-transform: rotate(-30deg);
+        -o-transform: rotate(-30deg);
+        transform: rotate(-30deg);
+    }
+    75%{
+        -webkit-transform: rotate(30deg);
+        -moz-transform: rotate(30deg);
+        -ms-transform: rotate(30deg);
+        -o-transform: rotate(30deg);
+        transform: rotate(30deg);
+    }
+    100%{
+        -webkit-transform: rotate(0deg);
+        -moz-transform: rotate(0deg);
+        -ms-transform: rotate(0deg);
+        -o-transform: rotate(0deg);
+        transform: rotate(0deg);
+    }
+}
+.add2{
+
+    animation: ballrotate 1;
+    -webkit-animation:ballrotate 1s;
+    -moz-animation:ballrotate 1s;
+    -ms-animation:ballrotate 1s;
+    -o-animation:ballrotate 1s;
+    animation-iteration-count:infinite;
+}
+
+
+@keyframes ball_1{
+    0%{bottom:1.55rem;right:0.33rem;}
+    40%{bottom:1.55rem;right:0.33rem;}
+    60%{bottom:3.35rem;right:3.15rem;}
+    80%{bottom:0.89rem;right:1.76rem;}
+    100%{bottom:1.55rem;right:0.33rem;}
+}
+.shark_ball_1{
+    animation: ball_1 0.5s;
+    -webkit-animation:ball_1 0.5s;
+    -moz-animation:ball_1 0.5s;
+    -ms-animation:ball_1 0.5s;
+    -o-animation:ball_1 0.5s;
+    animation-iteration-count:infinite;
+}
+@keyframes ball_2{
+    0%{bottom:0.84rem;right:0.6rem;}
+    30%{bottom:0.84rem;right:0.6rem;}
+    50%{bottom:2.44rem;right:3.65rem;}
+    70%{bottom:2.0rem;right:0.82rem;}
+    100%{bottom:0.84rem;right:0.6rem;}
+}
+.shark_ball_2{
+    animation: ball_2 0.5s;
+    -webkit-animation:ball_2 0.5s;
+    -moz-animation:ball_2 0.5s;
+    -ms-animation:ball_2 0.5s;
+    -o-animation:ball_2 0.5s;
+    animation-iteration-count:infinite;
+}
+@keyframes ball_3{
+    0%{bottom:0.34rem;right:1.21rem;}
+    30%{bottom:2.97rem;right:2.09rem;}
+    70%{bottom:1.43rem;right:3.46rem;}
+    100%{bottom:0.34rem;right:1.21rem;}
+}
+.shark_ball_3{
+    animation: ball_3 0.5s;
+    -webkit-animation:ball_3 0.5s;
+    -moz-animation:ball_3 0.5s;
+    -ms-animation:ball_3 0.5s;
+    -o-animation:ball_3 0.5s;
+    animation-iteration-count:infinite;
+}
+@keyframes ball_4{
+    0%{bottom:0.95rem;right:1.35rem;}
+    30%{bottom:2.51rem;right:0.72rem;}
+    70%{bottom:1.7rem;right:3.44rem;}
+    100%{bottom:0.95rem;right:1.35rem;}
+}
+.shark_ball_4{
+    animation: ball_4 0.5s;
+    -webkit-animation:ball_4 0.5s;
+    -moz-animation:ball_4 0.5s;
+    -ms-animation:ball_4 0.5s;
+    -o-animation:ball_4 0.5s;
+    animation-iteration-count:infinite;
+}
+@keyframes ball_5{
+     0%{bottom:0.22rem;right:2.05rem;}
+     30%{bottom:0.22rem;right:2.05rem;}
+     50%{bottom:1.6rem;right:0.75rem;}
+     70%{bottom:3.31rem;right:2.54rem;}
+     100%{bottom:0.22rem;right:2.05rem;}
+ }
+.shark_ball_5{
+    animation: ball_5 0.5s;
+    -webkit-animation:ball_5 0.5s;
+    -moz-animation:ball_5 0.5s;
+    -ms-animation:ball_5 0.5s;
+    -o-animation:ball_5 0.5s;
+    animation-iteration-count:infinite;
+}
+@keyframes ball_6{
+    0%{bottom:0.32rem;left:1.33rem;}
+    30%{bottom:0.56rem;right :1.1rem;}
+    70%{bottom:2.58rem;right:1.1rem;}
+    100%{bottom:0.32rem;left:1.33rem;}
+}
+.shark_ball_6{
+    animation: ball_6 0.5s;
+    -webkit-animation:ball_6 0.5s;
+    -moz-animation:ball_6 0.5s;
+    -ms-animation:ball_6 0.5s;
+    -o-animation:ball_6 0.5s;
+    animation-iteration-count:infinite;
+}
+@keyframes ball_7{
+    0%{bottom:0.84rem;left:0.67rem;}
+    40%{bottom:0.84rem;left:0.67rem;}
+    60%{bottom:1.25rem;right:0.5rem;}
+    80%{bottom:3.43rem;right:1.38rem;}
+    100%{bottom:0.84rem;left:0.67rem;}
+}
+.shark_ball_7{
+    animation: ball_7 0.5s;
+    -webkit-animation:ball_7 0.5s;
+    -moz-animation:ball_7 0.5s;
+    -ms-animation:ball_7 0.5s;
+    -o-animation:ball_7 0.5s;
+    animation-iteration-count:infinite;
+}
+@keyframes ball_8{
+    0%{bottom:0.9rem;left:1.56rem;}
+    30%{bottom:0.85rem;right:1.63rem;}
+    70%{bottom:3.65rem;right:2.17rem;}
+    100%{bottom:0.9rem;left:1.56rem;}
+}
+.shark_ball_8{
+    animation: ball_8 0.5s;
+    -webkit-animation:ball_8 0.5s;
+    -moz-animation:ball_8 0.5s;
+    -ms-animation:ball_8 0.5s;
+    -o-animation:ball_8 0.5s;
+    animation-iteration-count:infinite;
+}
+@keyframes ball_9{
+    0%{bottom:1.36rem;left:1.33rem;}
+    20%{bottom:1.36rem;left:1.33rem;}
+    30%{bottom:2.96rem;right:3.15rem;}
+    50%{bottom:1.99rem;right:0.82rem;}
+    80%{bottom:2.96rem;right:3.15rem;}
+    100%{bottom:1.36rem;left:1.33rem;}
+}
+.shark_ball_9{
+    animation: ball_9 0.5s;
+    -webkit-animation:ball_9 0.5s;
+    -moz-animation:ball_9 0.5s;
+    -ms-animation:ball_9 0.5s;
+    -o-animation:ball_9 0.5s;
+    animation-iteration-count:infinite;
+}

@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>H5新标签、新属性、新类型</title>
+    <style>
+        strong{color: red;}
+    </style>
+</head>
+<body>
+    <h2>三个新的表单标签</h2>
+    <!--datalist标签，规定input标签的选项列表-->
+    <input type="text" list="DataList">
+    <datalist id="DataList">
+        <option>javascript</option>
+        <option>css</option>
+        <option>html</option>
+        <option>jquery</option>
+        <option>nodejs</option>
+    </datalist>
+    <p>1.datalist标签可以使input具有下拉菜单select一样的菜单列表供用户选择，还可以根据用户的输入筛选匹配的下拉菜单列表</p>
+    <!--output标签，定义不同类型的输出-->
+    <form oninput="b.value=parseInt(a.value)*2">
+        <input type="number" name="a">乘以2=<br>
+        <output name="b"></output>
+    </form>
+    <p>2.output标签可以定义不同类型的输出，<strong>oninput属性</strong>用来监听表单的变化，并把结果赋值到output的value</p>
+    <p></p>
+    <p>3.keygen标签已经移出web标准</p>
+
+    <h2>12个新的表单属性</h2>
+    <!--autocomplete属性，提供自动填充的功能-->
+    <form autocomplete="on">
+        <input type="text" >
+        <input type="text" autocomplete="on">
+    </form>
+    <p>1.<strong>autocomplete属性</strong>用于form和input标签，实现自动完成输入的功能，前提是用户的输入内容被保存下来了</p>
+    <!--novalidate属性，使表单提交免验证-->
+    <form novalidate>
+        <input type="email">
+        <input type="submit" value="save">
+    </form>
+    <p>2.此处的input为email类型，若邮箱格式不正确将报错，但由于加了<strong>novalidate属性</strong>，可以使表单免验证，直接提交</p>
+    <!--autofocus属性，使表单自动获焦-->
+    <input type="text" autofocus>
+    <p>3.<strong>&lt;autofocus&gt;属性</strong>可以将表单自动获焦，若一个网页存在多个autofocus属性的标签，则只有一个input标签有效获焦</p>
+    <!--form属性，规定input属于哪个表单-->
+    <form id="me">
+        <input type="text">
+        <input type="submit" value="save">
+    </form>
+    <input type="text" placeholder="在form标签外的input标签" form="me">
+    <P>4.<strong>form属性</strong>可以规定input标签属于哪个表单，一般用于非form标签子节点的input标签</P>
+    <!--formaction属性，用于描述表单提交的URL地址-->
+</body>
+</html>
